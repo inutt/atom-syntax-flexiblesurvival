@@ -1,0 +1,11 @@
+{
+    "name": "language-muf",
+    "version": "0.0.0",
+    "description": "Flexible Survival string parser highlighting for atom",
+    "engines": {
+        "atom": "*"
+    },
+    "dependencies": {},
+    "repository": "https://github.com/inutt/atom-syntax-muf.git",
+    "license": "GPL-3+"
+}

@@ -1,0 +1,146 @@
+'scopeName': 'source.muf'
+'name': 'Multi-User Forth'
+'fileTypes': [ 'muf' ]
+
+'patterns': [
+    {
+        'include': '#target'
+    },
+    {
+        'include': '#bracketed'
+    },
+    {
+        'include': '#colours'
+    }
+]
+'repository':
+    'target':
+        'patterns': [
+            {
+                # Targets of the form [thing]
+                'match': '\\[(player|looker|victor|loser)\\]'
+                'name': 'constant.language.muf'
+            }
+        ]
+    'bracketed':
+        'patterns': [
+            {
+                'match': '\\[(\\s+)'
+                'captures':
+                    '0': 'name': 'keyword.control.other.muf'
+                    '1': 'name': 'invalid.illegal.muf'
+            },
+            {
+                'match': '(\\s+)\\]'
+                'captures':
+                    '0': 'name': 'keyword.control.other.muf'
+                    '1': 'name': 'invalid.illegal.muf'
+            },
+            {
+                'begin': '\\['
+                'end': '\\]'
+                'beginCaptures':
+                    '0':
+                        'name': 'keyword.control.other.muf'
+                'endCaptures':
+                    '0':
+                        'name': 'keyword.control.other.muf'
+                'patterns': [
+                    {
+                        'include': '#target'
+                    },
+                    {
+                        'include': '#bracketed'
+                    },
+                    {
+                        # Symbolic comparison operators, and grouping brackets
+                        'match': '(\\<|=|\\>|!=|==|~=|\\(|\\)|\\|)'
+                        'name': 'keyword.operator.muf'
+                    },
+                    {
+                        # Textual comparison operators
+                        'match': '\\b(and|or|not)\\b'
+                        'name': 'keyword.operator.muf'
+                    },
+                    {
+                        # Other comparison parameters
+                        'match': '\\b(of|is( not)?|equipped( custom)? by|(not )?present in|likes|dislikes|owned by|possessed by( custom)?|the infection)\\b'
+                        'name': 'keyword.operator.muf'
+                    },
+                    {
+                        # Numeric constants
+                        'match': '\\b\\d+\\b'
+                        'name': 'constant.numeric.muf'
+                    },
+                    {
+                        # Pronoun replacements (must be followed by a target)
+                        'match': '(\\%A|\\%a|\\%S|\\%s|\\%O|\\%o|\\%P|\\%p|\\%R|\\%r) of'
+                        'captures':
+                            0: 'name': 'keyword.control.other.muf'
+                            1: 'name': 'variable.language.muf'
+                    },
+                    {
+                        # Deprecated player name syntax (should use [player] instead)
+                        'match': '\\%N|\\%n'
+                        'name': 'invalid.deprecated.muf'
+                    },
+                    {
+                        # Various physical description parameters
+                        'match': '\\b(size|skin|cocks|cock length|ball size|cunts|cunt length|breasts|breast size)\\b'
+                        'name': 'variable.language.muf'
+                    },
+                    {
+                        # Mutation parameters
+                        'match': '\\bmutation/(skin|head|arms|torso|cock|legs)\\b'
+                        'name': 'variable.language.muf'
+                    },
+                    {
+                        # World parameters
+                        'match': '\\b(time|status|city stat)\\b'
+                        'name': 'variable.language.muf'
+                    },
+                    {
+                        # Control flow
+                        'match': '\\b(if|else|end if|var)\\b'
+                        'name': 'keyword.control.muf'
+                    },
+                    {
+                        # Appearance (not sex) values - affected by 'appears ...' perks
+                        'match': '\\b(feminine|masculine|hermy|neutral)\\b'
+                        'name': 'constant.language.muf'
+                    },
+                    {
+                        # Sex (not appearance) values - not affected by 'appears ...' perks
+                        'match': '\\b(feminine|masculine|hermy|neutral)\\b'
+                        'name': 'constant.language.muf'
+                    },
+                    {
+                        # Flags
+                        'match': '\\b(barbed|beaked|candy|clawed|feathered|feral|flared|furred|hooved|horned|inorganic|knotted|latex|legless|mouthless|multiarms|multiheads|oviparous|ovipositor|pouch|scaled|serpentine|sheathed|snout|tailed|tails|taur|trunk|udder|winged)\\b'
+                        'name': 'constant.language.muf'
+                    },
+                    {
+                        # Stats
+                        'match': '\\b((local )?stat|hp|pregnant|freecred|level|mentor)\\b'
+                        'name': 'variable.language.muf'
+                    },
+                    {
+                        # Time
+                        'match': '\\b(day|night|morning|afternoon|evening)\\b'
+                        'name': 'variable.language.muf'
+                    },
+                    {
+                        # Targets without brackets, which is invalid
+                        'match': '(player|looker|victor|loser)'
+                        'name': 'invalid.illegal.muf'
+                    }
+                ]
+            }
+        ]
+    'colours':
+        'patterns': [
+            {
+                'match': '\\^(\\d+|normal)\\^'
+                'name': 'constant.other.muf'
+            }
+        ]
