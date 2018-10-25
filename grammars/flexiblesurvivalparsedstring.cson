@@ -1,6 +1,6 @@
-'scopeName': 'source.muf'
+'scopeName': 'source.flexiblesurvival'
 'name': 'Multi-User Forth'
-'fileTypes': [ 'muf' ]
+'fileTypes': [ 'fsps' ]
 
 'patterns': [
     {
@@ -19,7 +19,7 @@
             {
                 # Targets of the form [thing]
                 'match': '\\[(player|looker|victor|loser)\\]'
-                'name': 'constant.language.muf'
+                'name': 'constant.language.flexiblesurvival'
             }
         ]
     'bracketed':
@@ -27,24 +27,24 @@
             {
                 'match': '\\[(\\s+)'
                 'captures':
-                    '0': 'name': 'keyword.control.other.muf'
-                    '1': 'name': 'invalid.illegal.muf'
+                    '0': 'name': 'keyword.control.other.flexiblesurvival'
+                    '1': 'name': 'invalid.illegal.flexiblesurvival'
             },
             {
                 'match': '(\\s+)\\]'
                 'captures':
-                    '0': 'name': 'keyword.control.other.muf'
-                    '1': 'name': 'invalid.illegal.muf'
+                    '0': 'name': 'keyword.control.other.flexiblesurvival'
+                    '1': 'name': 'invalid.illegal.flexiblesurvival'
             },
             {
                 'begin': '\\['
                 'end': '\\]'
                 'beginCaptures':
                     '0':
-                        'name': 'keyword.control.other.muf'
+                        'name': 'keyword.control.other.flexiblesurvival'
                 'endCaptures':
                     '0':
-                        'name': 'keyword.control.other.muf'
+                        'name': 'keyword.control.other.flexiblesurvival'
                 'patterns': [
                     {
                         'include': '#target'
@@ -55,84 +55,84 @@
                     {
                         # Symbolic comparison operators, and grouping brackets
                         'match': '(\\<|=|\\>|!=|==|~=|\\(|\\)|\\|)'
-                        'name': 'keyword.operator.muf'
+                        'name': 'keyword.operator.flexiblesurvival'
                     },
                     {
                         # Textual comparison operators
                         'match': '\\b(and|or|not)\\b'
-                        'name': 'keyword.operator.muf'
+                        'name': 'keyword.operator.flexiblesurvival'
                     },
                     {
                         # Other comparison parameters
                         'match': '\\b(of|is( not)?|equipped( custom)? by|(not )?present in|likes|dislikes|owned by|possessed by( custom)?|the infection)\\b'
-                        'name': 'keyword.operator.muf'
+                        'name': 'keyword.operator.flexiblesurvival'
                     },
                     {
                         # Numeric constants
                         'match': '\\b\\d+\\b'
-                        'name': 'constant.numeric.muf'
+                        'name': 'constant.numeric.flexiblesurvival'
                     },
                     {
                         # Pronoun replacements (must be followed by a target)
                         'match': '(\\%A|\\%a|\\%S|\\%s|\\%O|\\%o|\\%P|\\%p|\\%R|\\%r) of'
                         'captures':
-                            0: 'name': 'keyword.control.other.muf'
-                            1: 'name': 'variable.language.muf'
+                            0: 'name': 'keyword.control.other.flexiblesurvival'
+                            1: 'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # Deprecated player name syntax (should use [player] instead)
                         'match': '\\%N|\\%n'
-                        'name': 'invalid.deprecated.muf'
+                        'name': 'invalid.deprecated.flexiblesurvival'
                     },
                     {
                         # Various physical description parameters
                         'match': '\\b(size|skin|cocks|cock length|ball size|cunts|cunt length|breasts|breast size)\\b'
-                        'name': 'variable.language.muf'
+                        'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # Mutation parameters
                         'match': '\\bmutation/(skin|head|arms|torso|cock|legs)\\b'
-                        'name': 'variable.language.muf'
+                        'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # World parameters
                         'match': '\\b(time|status|city stat)\\b'
-                        'name': 'variable.language.muf'
+                        'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # Control flow
                         'match': '\\b(if|else|end if|var)\\b'
-                        'name': 'keyword.control.muf'
+                        'name': 'keyword.control.flexiblesurvival'
                     },
                     {
                         # Appearance (not sex) values - affected by 'appears ...' perks
                         'match': '\\b(feminine|masculine|hermy|neutral)\\b'
-                        'name': 'constant.language.muf'
+                        'name': 'constant.language.flexiblesurvival'
                     },
                     {
                         # Sex (not appearance) values - not affected by 'appears ...' perks
                         'match': '\\b(feminine|masculine|hermy|neutral)\\b'
-                        'name': 'constant.language.muf'
+                        'name': 'constant.language.flexiblesurvival'
                     },
                     {
                         # Flags
                         'match': '\\b(barbed|beaked|candy|clawed|feathered|feral|flared|furred|hooved|horned|inorganic|knotted|latex|legless|mouthless|multiarms|multiheads|oviparous|ovipositor|pouch|scaled|serpentine|sheathed|snout|tailed|tails|taur|trunk|udder|winged)\\b'
-                        'name': 'constant.language.muf'
+                        'name': 'constant.language.flexiblesurvival'
                     },
                     {
                         # Stats
                         'match': '\\b((local )?stat|hp|pregnant|freecred|level|mentor)\\b'
-                        'name': 'variable.language.muf'
+                        'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # Time
                         'match': '\\b(day|night|morning|afternoon|evening)\\b'
-                        'name': 'variable.language.muf'
+                        'name': 'variable.language.flexiblesurvival'
                     },
                     {
                         # Targets without brackets, which is invalid
                         'match': '(player|looker|victor|loser)'
-                        'name': 'invalid.illegal.muf'
+                        'name': 'invalid.illegal.flexiblesurvival'
                     }
                 ]
             }
@@ -141,6 +141,6 @@
         'patterns': [
             {
                 'match': '\\^(\\d+|normal)\\^'
-                'name': 'constant.other.muf'
+                'name': 'constant.other.flexiblesurvival'
             }
         ]
