@@ -1,6 +1,7 @@
 'scopeName': 'source.flexiblesurvival'
 'name': 'Flexible Survival'
 'fileTypes': [ 'fsps' ]
+'limitLineLength': false
 
 'patterns': [
     {
@@ -86,7 +87,7 @@
                     },
                     {
                         # Various physical description parameters
-                        'match': '\\b(size|skin|cocks|cock length|ball size|cunts|cunt length|breasts|breast size)\\b'
+                        'match': '\\b(size|skin|cocks|cock size|cock length|ball size|cunts|cunt length|breasts|breast size)\\b'
                         'name': 'variable.language.flexiblesurvival'
                     },
                     {
