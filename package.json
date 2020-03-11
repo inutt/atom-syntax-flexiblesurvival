@@ -1,6 +1,6 @@
 {
   "name": "language-flexiblesurvival",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Flexible Survival string parser highlighting for atom",
   "engines": {
     "atom": "*"
