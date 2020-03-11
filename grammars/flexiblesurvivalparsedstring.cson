@@ -1,8 +1,8 @@
 'scopeName': 'source.flexiblesurvival'
 'name': 'Flexible Survival'
 'fileTypes': [ 'fsps' ]
-'limitLineLength': false
-
+'limitLineLength': no
+'maxTokensPerLine': 1000
 'patterns': [
     {
         'include': '#target'
